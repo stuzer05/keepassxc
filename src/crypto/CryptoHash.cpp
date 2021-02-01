@@ -39,16 +39,16 @@ CryptoHash::CryptoHash(Algorithm algo, bool hmac)
     switch (algo) {
     case CryptoHash::Sha256:
         if (hmac) {
-            d_ptr->hmacFunction.reset(Botan::MessageAuthenticationCode::create("HMAC(SHA-256)").release());
+            d->hmacFunction.reset(Botan::MessageAuthenticationCode::create("HMAC(SHA-256)").release());
         } else {
-            d_ptr->hashFunction.reset(Botan::HashFunction::create("SHA-256").release());
+            d->hashFunction.reset(Botan::HashFunction::create("SHA-256").release());
         }
         break;
     case CryptoHash::Sha512:
         if (hmac) {
-            d_ptr->hmacFunction.reset(Botan::MessageAuthenticationCode::create("HMAC(SHA-512)").release());
+            d->hmacFunction.reset(Botan::MessageAuthenticationCode::create("HMAC(SHA-512)").release());
         } else {
-            d_ptr->hashFunction.reset(Botan::HashFunction::create("SHA-512").release());
+            d->hashFunction.reset(Botan::HashFunction::create("SHA-512").release());
         }
         break;
     default:
@@ -60,7 +60,7 @@ CryptoHash::CryptoHash(Algorithm algo, bool hmac)
 CryptoHash::~CryptoHash()
 {
     Q_D(CryptoHash);
-    delete d_ptr;
+    delete d;
 }
 
 void CryptoHash::addData(const QByteArray& data)
