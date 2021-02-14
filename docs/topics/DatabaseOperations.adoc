@@ -287,7 +287,7 @@ image::database_security.png[]
 +
 .Database credentials
 image::database_security_credentials.png[]
-
++
 WARNING: Consider creating a backup of your YubiKey. Please refer to <<Creating a YubiKey backup>>
 
 5. Encryption settings allows you to change the average time it takes to encrypt and decrypt the database. The longer time that is chosen, the harder it will be to brute force attack your database. *We recommend a setting of one second.*
