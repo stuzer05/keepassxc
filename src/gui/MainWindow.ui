@@ -1025,6 +1025,9 @@
    </property>
   </action>
   <action name="actionGroupClone">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Clone Group...</string>
    </property>
