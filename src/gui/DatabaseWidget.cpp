@@ -929,7 +929,8 @@ void DatabaseWidget::createGroup()
     switchToGroupEdit(m_newGroup.data(), true);
 }
 
-void DatabaseWidget::cloneGroup() {
+void DatabaseWidget::cloneGroup()
+{
     Group* currentGroup = m_groupView->currentGroup();
     Q_ASSERT(currentGroup && canCloneCurrentGroup());
     if (!currentGroup || !canCloneCurrentGroup()) {
